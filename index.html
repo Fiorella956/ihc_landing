@@ -145,10 +145,10 @@ favorecen la construccion de vinculos auténticos
 
     <p style="margin:10px 0;">Intereses:</p>
     <div id="intereses" class="tags">
-      <span class="interes-tag">Deportes</span>
-      <span class="interes-tag">Arte</span>
-      <span class="interes-tag">Tecnología</span>
-      <span class="interes-tag">Música</span>
+      <span>Deportes</span>
+      <span>Arte</span>
+      <span>Tecnología</span>
+      <span>Música</span>
     </div>
 
     <button id="btnRegistrar" class="btn btn-blue" style="margin-top:20px; width:100%;">
@@ -288,6 +288,28 @@ favorecen la construccion de vinculos auténticos
     </div>
 </div>
 <script src="script.js"></script>
+<script>
+document.getElementById("registroForm").addEventListener("submit", function(e){
+    e.preventDefault();
+    document.getElementById("registroSeccion").style.display = "none";
+    document.getElementById("perfilUsuario").style.display = "block";
 
+    document.getElementById("editNombre").value = document.getElementById("nombre").value;
+    document.getElementById("editCorreo").value = document.getElementById("correo").value;
+    document.getElementById("editInteres").value = document.getElementById("interes").value;
+});
+</script>
+
+<script>
+
+document.querySelector(".btn-match").addEventListener("click", function () {
+    alert("¡Tú y María ahora son amigos!");
+});
+
+document.querySelector(".btn-reportar").addEventListener("click", function () {
+    alert("Este usuario fue reportado exitosamente, ahora evaluaremos");
+});
+</script>
+    
 </body>
 </html>
