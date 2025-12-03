@@ -1,184 +1,313 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="es">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Finder - Prueba Registro</title>
-  <style>
-    body{font-family:Arial,Helvetica,sans-serif;margin:0;color:#333}
-    header{display:flex;justify-content:space-between;align-items:center;padding:15px 24px;border-bottom:1px solid #ddd}
-    .hero{background:#ff6b35;color:#fff;padding:40px 24px;text-align:center}
-    .section{padding:36px 24px;max-width:1100px;margin:0 auto}
-    .input{width:100%;padding:10px;border:1px solid #ccc;border-radius:6px;margin-bottom:12px}
-    .btn{padding:10px 14px;border:none;border-radius:8px;cursor:pointer}
-    .btn-blue{background:#4d6bff;color:#fff}
-    .tags span{display:inline-block;padding:8px 12px;background:#eee;border-radius:20px;margin:6px 6px 0 0;cursor:pointer}
-    .tags span.selected{background:#4d6bff;color:#fff}
-    /* modal simple */
-    .modal{display:none;position:fixed;left:0;top:0;width:100%;height:100%;background:rgba(0,0,0,0.5);z-index:2000}
-    .modal .content{background:#fff;width:360px;margin:80px auto;padding:18px;border-radius:10px;position:relative}
-    .close{position:absolute;right:10px;top:6px;cursor:pointer;font-size:20px}
-    /* perfil */
-    #perfilUsuario{display:none;padding:30px;background:#fafafa}
-    .profile-row{display:flex;gap:20px;align-items:center}
-  </style>
-</head>
-<body>
+<head> 
+    <link rel="stylesheet" href="style.css"> 
+    <meta charset="UTF-8" /> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+    <title>Finder - Amistades auténticas</title> 
+    <style>
+        body { margin:0; font-family: Arial, sans-serif; color:#333; } 
+        header { display:flex; justify-content:space-between; align-items:center; padding:15px 40px; border-bottom:1px solid #ddd; } 
+        header nav a { margin:0 10px; text-decoration:none; color:#333; } 
+        .hero { background:#ff6b35; color:white; padding:80px 40px; text-align:center; } 
+        .btn { padding:12px 25px; border:none; cursor:pointer; border-radius:6px; font-size:15px; } 
+        .btn-white { background:white; color:#ff6b35; margin-right:10px; } 
+        .btn-blue { background:#4d6bff; color:white; } 
+        .section { padding:60px 40px; max-width:1100px; margin:auto; } 
+        .grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:20px; } 
+        .card { padding:20px; border:1px solid #ddd; border-radius:10px; background:white; } 
+        .title-center { text-align:center; margin-bottom:40px; } 
+        .funciona { display:flex; justify-content:space-between; flex-wrap:wrap; gap:40px; } 
+        .testimonios { display:flex; gap:20px; justify-content:center; flex-wrap:wrap; } 
+        .testimonio { padding:20px; background:#f3f6ff; border-radius:10px; width:280px; } 
+        footer { text-align:center; padding:30px; margin-top:50px; border-top:1px solid #ddd; } 
+        .input { width:100%; padding:12px; border:1px solid #ccc; border-radius:6px; margin-bottom:15px; } 
+        .tags span { padding:8px 15px; background:#eee; border-radius:20px; margin-right:10px; cursor:pointer; display:inline-block; } 
+        </style>
+        </head> 
+        <body> 
+            <header> 
+                <h1 class="logo" style="display:flex; align-items:center; gap:10px;"></h1>
+                <img src="imagen_logo.jpg" alt="Logo Finder" style="width:50px; height:50px;"> 
+                Finder 
+            </h1> 
+            <nav> 
+                <li><a href="#" id="btnContacto">Contacto</a></li> 
+            </nav> 
+        </header>
+        <section class="hero"> 
+            <h1>Encuentra amistades auténticas</h1> 
+            <p>Conéctate en un espacio seguro, inmersivo y lleno de oportunidades</p>
+            <button class="btn btn-white">Ver demo AR</button>
 
-<header>
-  <h1 style="display:flex;align-items:center;gap:10px"><img src="" alt="" style="width:36px;height:36px;background:#ccc;border-radius:6px"> Finder</h1>
-  <nav><a href="#" id="btnContacto">Contacto</a></nav>
-</header>
+            <a href="#registro" class="btn btn-blue">Regístrate gratis</a> 
+        </section>
+        <section class="section"> 
+            <h2 class="title-center">Revolucionando las Conexiones Auténticas</h2> 
+            <p style="text-align:center; max-width:800px; margin:auto;"> Finder es un sistema web y móvil innovador y competente que facilita el acceso a potenciales nuevas amistades con personas de diferentes ubicaciones y permite gestionarlas de manera eficiente y saludable desde el inicio. Nuestra propuesta apuesta por la integración de la realidad aumentada (AR) como herramienta diferenciadora frente a la competencia, orientando as interacciones sociales de los usuarios a través de experiencias inmersivas que favorecen la construccion de vinculos auténticos </p>
+            <section class="section"> 
+                <div class="box-container"> 
+                    <div class="info-box"> 
+                        <img src="imagen_vision.png" alt=""> 
+                        <div> 
+                            <h3>Nuestra Visión</h3> 
+                            <p>Ser la plataforma líder en gestión de amistades a nivel nacional.</p> 
+                        </div> 
+                    </div>
+                    <div class="info-box"> 
+                        <img src="imagen_mision.png" alt=""> 
+                        <div> 
+                            <h3>Nuestra Misión</h3> 
+                            <p>Facilitar a jóvenes y profesionales encontrar amistades genuinas.</p> 
+                        </div> 
+                    </div>
+                    <div class="info-box center-box"> 
+                        <img src="imagen_valores.png" alt=""> 
+                        <div> 
+                            <h3>Nuestros Valores</h3> 
+                            <p>Transparencia, Empatía, Seguridad, y Caridad.</p> 
+                        </div> 
+                    </div>
 
-<section class="hero">
-  <h1>Encuentra amistades auténticas</h1>
-  <p>Conéctate en un espacio seguro, inmersivo y lleno de oportunidades</p>
-</section>
+                    <div class="info-box"> 
+                        <img src="imagen_problema.png" alt=""> 
+                        <div> 
+                            <h3>El Problema</h3> 
+                            <p>Las redes sociales actuales fomentan conexiones superfiaciales. Es difícil encontrar amistades genuinas basadas en intereses reales.</p> 
+                        </div> 
+                    </div>
+                    <div class="info-box"> 
+                        <img src="imagen_solucion.jpg" alt=""> 
+                        <div> 
+                            <h3>La Solución</h3> 
+                            <p>Matching inteligente por intereses reales, experiencias en realidad aumentada y verificación de autenticidad para conexiones genuinas.</p> 
+                        </div> 
+                    </div>
+                    </div> 
+                
+                </section>
 
-<!-- Registro -->
-<section id="registro" class="section">
-  <div style="max-width:720px;margin:auto">
-    <h2>¡Únete a nosotros!</h2>
+                <section class="como-funciona" style="text-align:center; padding:40px 20px; font-family:Arial, sans-serif;"> 
+                    <h2>¿Cómo funciona?</h2> 
+                    <p style="font-size:18px; margin-top:10px;">Tres simples pasos para comenzar tu viaje hacia amistades auténticas</p>
+                    <div style="display:flex; justify-content:center; gap:40px; margin-top:30px; flex-wrap:wrap;"> 
+                        <div style="max-width:250px;"> 
+                            <h3><strong>1. Crea tu perfil</strong></h3> 
+                            <p style="color:gray;">Completa tu perfil con tus intereses reales</p> 
+                        </div>
+                        <div style="max-width:250px;"> 
+                            <h3><strong>2. Encuentra matches</strong></h3> 
+                            <p style="color:gray;">Conecta con personas afines a ti</p> 
+                        </div> 
+                        <div style="max-width:250px;"> 
+                            <h3><strong>3. Conecta y socializa</strong></h3> 
+                            <p style="color:gray;">Inicia conversaciones y construye amistades</p> 
+                        </div> 
+                    </div> 
+                </section>
 
-    <input id="nombre" class="input" type="text" placeholder="Ingresa tu nombre">
-    <input id="correo" class="input" type="email" placeholder="Correo electrónico">
+                <section id="registro" class="section" style="display:flex; align-items:center; justify-content:space-between; gap:40px;"> 
+                    <div style="flex:1;"> 
+                        <h2 style="font-size:32px; margin-bottom:10px;">¡Únete a nosotros!</h2> 
+                        <p style="font-size:18px; color:#555;"> Regístrate y comienza tu viaje hacia nuevas amistades </p> 
+                    </div>
+                    <div style="flex:1; background:#fff; padding:30px; border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,0.1);">
+                        <input class="input" type="text" id="nombre" placeholder="Ingresa tu nombre" /> 
+                        <input class="input" type="email" id="correo" placeholder="Correo electrónico" /> 
+                        <p style="margin:10px 0;">Intereses:</p> 
+                        <div id="intereses" class="tags"> 
+                            <span>Deportes</span> 
+                            <span>Arte</span> 
+                            <span>Tecnología</span> 
+                            <span>Música</span> 
+                        </div>
 
-    <p>Intereses (clic para seleccionar):</p>
-    <div id="intereses" class="tags">
-      <span data-value="Deportes">Deportes</span>
-      <span data-value="Arte">Arte</span>
-      <span data-value="Tecnología">Tecnología</span>
-      <span data-value="Música">Música</span>
-    </div>
+                        <button id="btnRegistrar" class="btn btn-blue" style="margin-top:20px; width:100%;"> Registrarse </button>
 
-    <button id="btnRegistrar" class="btn btn-blue" style="margin-top:16px;width:100%">Registrarse</button>
-  </div>
-</section>
+                        </div> 
+                    </section> 
+                    <section id="perfilUsuario" style="display:none; padding:60px 0;"> 
+                        <div class="perfil-container"> 
+                            <div class="perfil-editar"> 
+                                <h2>Editar tu perfil</h2>
+                                <div class="foto-perfil"> 
+                                    <img src="imagen_sincara.png" alt="Foto de perfil"> 
+                                    <button class="btn-subir">Cambiar foto</button> 
+                                </div>
+                                <label>Nombre:</label> 
+                                <input type="text" id="editNombre"> 
+                                <label>Correo electrónico:</label> 
+                                <input type="email" id="editCorreo"> 
+                                <label>Interés:</label> 
+                                <input type="text" id="editInteres"> 
+                                <button class="btn-guardar">Guardar cambios</button> 
+                            </div>
 
-<!-- Perfil que mostrará datos -->
-<section id="perfilUsuario" class="section">
-  <div style="max-width:720px;margin:auto">
-    <h2>Perfil registrado</h2>
-    <div class="profile-row">
-      <div>
-        <p><strong>Nombre:</strong> <span id="perfilNombre"></span></p>
-        <p><strong>Correo:</strong> <span id="perfilCorreo"></span></p>
-        <p><strong>Intereses:</strong> <span id="perfilIntereses"></span></p>
-      </div>
-    </div>
-    <button id="volverRegistro" class="btn" style="margin-top:12px">Editar / Volver al registro</button>
-  </div>
-</section>
+                            <div class="sugerencias"> 
+                                <h2>Personas sugeridas</h2> 
+                                <div class="card-user"> 
+                                    <h3>María López</h3> 
+                                    <p>Edad: 22</p> 
+                                    <p>Correo: maria123@gmail.com</p> 
+                                    <p>Interés: Fútbol</p>
+                                 </div>
 
-<!-- Modal contacto -->
-<div id="modalContacto" class="modal" aria-hidden="true">
-  <div class="content">
-    <span id="cerrarModal" class="close">×</span>
-    <h3>Contáctanos</h3>
-    <form id="formContacto">
-      <input class="input" type="text" placeholder="Nombre" required>
-      <input class="input" type="email" placeholder="Correo" required>
-      <textarea class="input" placeholder="Mensaje" required style="min-height:90px"></textarea>
-      <button type="submit" class="btn btn-blue">Enviar</button>
-    </form>
-  </div>
-</div>
+                                 <button class="btn-match">Hacer Match</button> 
+                                 <button class="btn-reportar">Reportar usuario</button>
 
-<script>
-/*
-  Este script espera que el DOM esté listo porque se ejecuta al final del body.
-  Funcionalidad:
-  - seleccionar intereses
-  - registrar: valida, muestra perfil con intereses seleccionados
-  - botón volver (editar)
-  - modal contacto
-*/
+                                 <div class="card-user"> 
+                                    <h3>Carlos Ruiz</h3> 
+                                    <p>Edad: 24</p> 
+                                    <p>Correo: carlos456@gmail.com</p> 
+                                    <p>Interés: Música</p> 
+                                </div> 
+                                <button class="btn-match">Hacer Match</button> 
+                                <button class="btn-reportar">Reportar usuario</button> 
+                            </div>
+                            </div> 
+                        </section>
+                        <section class="section" style="background:#fafafa;"> 
+                            <h2 class="title-center">Lo que dicen nuestros usuarios</h2> 
+                            <div class="testimonios"> 
+                                <div class="testimonio"> 
+                                    <img src="imagen_lucas.jpg" alt="Lucas" class="foto-testimonio"> 
+                                    <strong>Lucas</strong> 
+                                    <p>¡Increíbles experiencias y amistades!</p> 
+                                </div>
 
-// Intereses toggle
-const interesesContainer = document.getElementById('intereses');
-let interesesSeleccionados = [];
+                                <div class="testimonio"> 
+                                    <img src="imagen_camila.jpg" alt="Camila" class="foto-testimonio"> 
+                                    <strong>Camila</strong> 
+                                    <p>La realidad aumentada hace conocer personas como un juego.</p> 
+                                </div>
 
-interesesContainer.querySelectorAll('span').forEach(span => {
-  span.addEventListener('click', () => {
-    span.classList.toggle('selected');
-    const val = span.getAttribute('data-value') || span.innerText.trim();
-    if (span.classList.contains('selected')) {
-      if (!interesesSeleccionados.includes(val)) interesesSeleccionados.push(val);
-    } else {
-      interesesSeleccionados = interesesSeleccionados.filter(i => i !== val);
+                                <div class="testimonio"> 
+                                    <img src="imagen_carlos.jpg" alt="Carlos" class="foto-testimonio">
+                                    <strong>Carlos</strong> 
+                                    <p>He hecho amigos que comparten mis intereses.</p> 
+                                </div>
+
+                                </div> 
+                            
+                            </section> 
+                            
+                            <!--About-the-Team and About-The Product--> 
+                            <section class="cards"> 
+                                <div class="About-The-Product"> 
+                                    <h3>Video About-The-Product</h3> 
+                                    <a href="https://youtu.be/I4QX-C00NaU"target="_blank">Descubre Finder</a> 
+                                </div>
+
+                                <div class="About-The-Team"> 
+                                    <h3>Video About-The-Team</h3> 
+                                    <a href="https://youtu.be/xr0yHJ67LmI"target="_blank">Descubre al Equipo detrás de Finder</a> 
+                                </div> 
+                            </section> 
+                            <footer> 
+                                <p>Síguenos en redes • Políticas de privacidad • Términos de servicio • Contacto</p> 
+                            </footer>
+                            <div id="modalContacto" class="modal"> 
+                                <div class="modal-content">
+                                    <span id="cerrarModal" class="close">&times;</span> 
+                                    <h2>¿En qué te ayudo?</h2> 
+                                    <p>Contacta conmigo a través de este formulario y te contestaré en un plazo de 24 horas.</p>
+                                    <div id="mensajeExito" class="mensaje-exito">¡Mensaje enviado con éxito!</div> 
+                                    <form id="formContacto"> 
+                                        <label>Nombre</label> 
+                                        <input type="text" required> 
+                                        <label>Apellido</label> 
+                                        <input type="text" required> 
+                                        <label>Correo electrónico</label> 
+                                        <input type="email" required> 
+                                        <label>Teléfono</label> 
+                                        <input type="tel" required> 
+                                        <label>Mensaje</label> 
+                                        <textarea required></textarea>
+
+                                        <button type="submit" class="btn-enviar">Enviar</button> 
+                                    </form> 
+                                </div> 
+                            </div>
+                            <div id="modalConfirmacion" class="modal-confirm"> 
+                                <div class="modal-contenido"> 
+                                    <h3>¡Gracias por contactarnos!</h3> 
+                                    <p>Tu mensaje ha sido enviado correctamente.
+                                        <br>Te responderemos pronto.</p> 
+                                        <button id="btnAceptar">Aceptar</button> 
+                                    </div> 
+                                </div>
+
+                                <script src="script.js"></script> 
+
+                                <script>
+// --- REGISTRO ---
+document.getElementById("btnRegistrar").addEventListener("click", function () {
+
+    const nombre = document.getElementById("nombre").value.trim();
+    const correo = document.getElementById("correo").value.trim();
+
+    if (nombre === "" || correo === "") {
+        alert("Por favor completa tu nombre y correo.");
+        return;
     }
-    // (opcional) console.log(interesesSeleccionados)
-  });
+
+    // Pasar datos al perfil
+    document.getElementById("editNombre").value = nombre;
+    document.getElementById("editCorreo").value = correo;
+
+    // Mostrar perfil y ocultar registro
+    document.getElementById("registro").style.display = "none";
+    document.getElementById("perfilUsuario").style.display = "block";
 });
-
-// Registrar
-const btnRegistrar = document.getElementById('btnRegistrar');
-btnRegistrar.addEventListener('click', () => {
-  const nombre = document.getElementById('nombre').value.trim();
-  const correo = document.getElementById('correo').value.trim();
-
-  if (!nombre || !correo) {
-    alert('Por favor completa nombre y correo.');
-    return;
-  }
-
-  // pasar datos al perfil
-  document.getElementById('perfilNombre').innerText = nombre;
-  document.getElementById('perfilCorreo').innerText = correo;
-  document.getElementById('perfilIntereses').innerText = interesesSeleccionados.length ? interesesSeleccionados.join(', ') : '—';
-
-  // ocultar registro y mostrar perfil
-  document.getElementById('registro').style.display = 'none';
-  document.getElementById('perfilUsuario').style.display = 'block';
-});
-
-// Volver a registro (editar)
-document.getElementById('volverRegistro').addEventListener('click', () => {
-  document.getElementById('perfilUsuario').style.display = 'none';
-  document.getElementById('registro').style.display = 'block';
-  // rellenar inputs con lo guardado (si quieres)
-  document.getElementById('nombre').value = document.getElementById('perfilNombre').innerText;
-  document.getElementById('correo').value = document.getElementById('perfilCorreo').innerText;
-  // restaurar selección de intereses visualmente
-  document.querySelectorAll('#intereses span').forEach(span => {
-    const val = span.getAttribute('data-value') || span.innerText.trim();
-    if (interesesSeleccionados.includes(val)) span.classList.add('selected'); else span.classList.remove('selected');
-  });
-});
-
-// Modal contacto
-const btnContacto = document.getElementById('btnContacto');
-const modalContacto = document.getElementById('modalContacto');
-const cerrarModal = document.getElementById('cerrarModal');
-const formContacto = document.getElementById('formContacto');
-
-btnContacto.addEventListener('click', (e) => {
-  e.preventDefault();
-  modalContacto.style.display = 'block';
-  modalContacto.setAttribute('aria-hidden','false');
-});
-
-cerrarModal.addEventListener('click', () => {
-  modalContacto.style.display = 'none';
-  modalContacto.setAttribute('aria-hidden','true');
-});
-
-window.addEventListener('click', (e) => {
-  if (e.target === modalContacto) {
-    modalContacto.style.display = 'none';
-    modalContacto.setAttribute('aria-hidden','true');
-  }
-});
-
-if (formContacto) {
-  formContacto.addEventListener('submit', (e) => {
-    e.preventDefault();
-    alert('Mensaje enviado. Gracias 😊');
-    formContacto.reset();
-    modalContacto.style.display = 'none';
-  });
-}
 </script>
 
-</body>
-</html>
+<script>
+// --- MATCHS Y REPORTES ---
+document.querySelectorAll(".btn-match").forEach(btn => {
+    btn.addEventListener("click", function () {
+        alert("¡Has hecho match!");
+    });
+});
+
+document.querySelectorAll(".btn-reportar").forEach(btn => {
+    btn.addEventListener("click", function () {
+        alert("Usuario reportado correctamente.");
+    });
+});
+</script>
+
+<script>
+// --- CONTACTO (MODAL) ---
+const modal = document.getElementById("modalContacto");
+const btnContacto = document.getElementById("btnContacto");
+const cerrarModal = document.getElementById("cerrarModal");
+const formContacto = document.getElementById("formContacto");
+const modalConfirm = document.getElementById("modalConfirmacion");
+const btnAceptar = document.getElementById("btnAceptar");
+
+// Abrir modal
+btnContacto.addEventListener("click", () => {
+    modal.style.display = "block";
+});
+
+// Cerrar modal con X
+cerrarModal.addEventListener("click", () => {
+    modal.style.display = "none";
+});
+
+// Enviar formulario contacto
+formContacto.addEventListener("submit", function(e){
+    e.preventDefault();
+    modal.style.display = "none";
+    modalConfirm.style.display = "block";
+});
+
+// Botón aceptar
+btnAceptar.addEventListener("click", function(){
+    modalConfirm.style.display = "none";
+});
+</script>
+
+                                
+ </body> 
+  </html>
