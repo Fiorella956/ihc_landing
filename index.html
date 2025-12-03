@@ -16,10 +16,10 @@
 
         header {
             display: flex;
-            justify-content:space-between;
-            align-items:center;
-            padding:15px 40px;
-            border-bottom:1px solid #ddd;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            border-bottom: 1px solid #ddd;
         }
 
         header nav ul {
@@ -38,10 +38,9 @@
             font-size: 16px;
         }
 
-        /* Intereses seleccionados */
         .selected {
-            background:#4d6bff !important;
-            color:white !important;
+            background: #4d6bff !important;
+            color: white !important;
         }
     </style>
 </head>
@@ -96,9 +95,7 @@
 
 <!-- PERFIL -->
 <section id="perfilUsuario" style="display:none; padding:60px 0;">
-
     <h2 style="text-align:center;">Tu perfil se registró correctamente</h2>
-
 </section>
 
 <!-- MODAL CONTACTO -->
@@ -134,7 +131,7 @@
     </div>
 </div>
 
-<!-- SCRIPT FUNCIONAL -->
+<!-- SCRIPT ÚNICO Y FUNCIONAL -->
 <script>
 // --- ABRIR MODAL CONTACTO ---
 const btnContacto = document.getElementById("btnContacto");
@@ -150,7 +147,6 @@ cerrarModal.addEventListener("click", function(){
     modalContacto.style.display = "none";
 });
 
-// --- CERRAR MODAL AL HACER CLICK FUERA ---
 window.addEventListener("click", function(e){
     if(e.target === modalContacto){
         modalContacto.style.display = "none";
@@ -172,10 +168,10 @@ btnAceptar.addEventListener("click", function(){
     modalConfirmacion.style.display = "none";
 });
 
-// --- INTERESES (seleccionar) ---
-document.querySelectorAll("#intereses span").forEach(function(tag){
-    tag.addEventListener("click", function(){
-        this.classList.toggle("selected");
+// --- INTERESES ---
+document.querySelectorAll("#intereses span").forEach(tag => {
+    tag.addEventListener("click", () => {
+        tag.classList.toggle("selected");
     });
 });
 
