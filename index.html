@@ -266,28 +266,34 @@
                         </div> 
                     </div> 
                     <script src="script.js"></script> 
-                    <script> 
-                    document.getElementById("registroForm").addEventListener("submit", function(e){ 
-                        e.preventDefault(); 
-                        document.getElementById("registroSeccion").style.display = "none"; 
-                        document.getElementById("perfilUsuario").style.display = "block"; 
-                        
-                        document.getElementById("editNombre").value = document.getElementById("nombre").value; 
-                        document.getElementById("editCorreo").value = document.getElementById("correo").value; 
-                        document.getElementById("editInteres").value = document.getElementById("interes").value; 
-                        }); 
-                        
-                        </script> 
-                        <script> 
-                        
-                        document.querySelector(".btn-match").addEventListener("click", function () { 
-                            alert("¡Tú y María ahora son amigos!"); 
-                            }); 
-                            
-                            document.querySelector(".btn-reportar").addEventListener("click", function () { 
-                                alert("Este usuario fue reportado exitosamente, ahora evaluaremos"); 
-                                }); 
-                 </script> 
+                    <script>
+// --- REGISTRO ---
+document.getElementById("btnRegistrar").addEventListener("click", function () {
+    
+    // Ocultar registro
+    document.getElementById("registro").style.display = "none";
+
+    // Mostrar perfil
+    document.getElementById("perfilUsuario").style.display = "block";
+
+    // Pasar los datos
+    document.getElementById("editNombre").value = document.getElementById("nombre").value;
+    document.getElementById("editCorreo").value = document.getElementById("correo").value;
+});
+
+// --- MATCH Y REPORTAR (para TODOS los botones repetidos) ---
+document.querySelectorAll(".btn-match").forEach(btn => {
+    btn.addEventListener("click", () => {
+        alert("¡Match realizado exitosamente!");
+    });
+});
+
+document.querySelectorAll(".btn-reportar").forEach(btn => {
+    btn.addEventListener("click", () => {
+        alert("Usuario reportado correctamente.");
+    });
+});
+</script>
          </body> 
                                 
 </html>
