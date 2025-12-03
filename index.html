@@ -35,6 +35,7 @@
   <p>Conéctate en un espacio seguro, inmersivo y lleno de oportunidades</p>
 </section>
 
+<!-- Registro -->
 <section id="registro" class="section">
   <div style="max-width:720px;margin:auto">
     <h2>¡Únete a nosotros!</h2>
@@ -54,6 +55,7 @@
   </div>
 </section>
 
+<!-- Perfil que mostrará datos -->
 <section id="perfilUsuario" class="section">
   <div style="max-width:720px;margin:auto">
     <h2>Perfil registrado</h2>
@@ -68,6 +70,7 @@
   </div>
 </section>
 
+<!-- Modal contacto -->
 <div id="modalContacto" class="modal" aria-hidden="true">
   <div class="content">
     <span id="cerrarModal" class="close">×</span>
@@ -82,7 +85,16 @@
 </div>
 
 <script>
+/*
+  Este script espera que el DOM esté listo porque se ejecuta al final del body.
+  Funcionalidad:
+  - seleccionar intereses
+  - registrar: valida, muestra perfil con intereses seleccionados
+  - botón volver (editar)
+  - modal contacto
+*/
 
+// Intereses toggle
 const interesesContainer = document.getElementById('intereses');
 let interesesSeleccionados = [];
 
@@ -99,6 +111,7 @@ interesesContainer.querySelectorAll('span').forEach(span => {
   });
 });
 
+// Registrar
 const btnRegistrar = document.getElementById('btnRegistrar');
 btnRegistrar.addEventListener('click', () => {
   const nombre = document.getElementById('nombre').value.trim();
@@ -109,30 +122,31 @@ btnRegistrar.addEventListener('click', () => {
     return;
   }
 
+  // pasar datos al perfil
   document.getElementById('perfilNombre').innerText = nombre;
   document.getElementById('perfilCorreo').innerText = correo;
   document.getElementById('perfilIntereses').innerText = interesesSeleccionados.length ? interesesSeleccionados.join(', ') : '—';
 
-
+  // ocultar registro y mostrar perfil
   document.getElementById('registro').style.display = 'none';
   document.getElementById('perfilUsuario').style.display = 'block';
 });
 
-
+// Volver a registro (editar)
 document.getElementById('volverRegistro').addEventListener('click', () => {
   document.getElementById('perfilUsuario').style.display = 'none';
   document.getElementById('registro').style.display = 'block';
- 
+  // rellenar inputs con lo guardado (si quieres)
   document.getElementById('nombre').value = document.getElementById('perfilNombre').innerText;
   document.getElementById('correo').value = document.getElementById('perfilCorreo').innerText;
-  
+  // restaurar selección de intereses visualmente
   document.querySelectorAll('#intereses span').forEach(span => {
     const val = span.getAttribute('data-value') || span.innerText.trim();
     if (interesesSeleccionados.includes(val)) span.classList.add('selected'); else span.classList.remove('selected');
   });
 });
 
-
+// Modal contacto
 const btnContacto = document.getElementById('btnContacto');
 const modalContacto = document.getElementById('modalContacto');
 const cerrarModal = document.getElementById('cerrarModal');
