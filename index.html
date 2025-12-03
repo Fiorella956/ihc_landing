@@ -238,23 +238,76 @@
                                 </div>
 
                                 <script src="script.js"></script> 
+
+                                <script>
+// --- REGISTRO ---
+document.getElementById("btnRegistrar").addEventListener("click", function () {
+
+    const nombre = document.getElementById("nombre").value.trim();
+    const correo = document.getElementById("correo").value.trim();
+
+    if (nombre === "" || correo === "") {
+        alert("Por favor completa tu nombre y correo.");
+        return;
+    }
+
+    // Pasar datos al perfil
+    document.getElementById("editNombre").value = nombre;
+    document.getElementById("editCorreo").value = correo;
+
+    // Mostrar perfil y ocultar registro
+    document.getElementById("registro").style.display = "none";
+    document.getElementById("perfilUsuario").style.display = "block";
+});
+</script>
+
+<script>
+// --- MATCHS Y REPORTES ---
+document.querySelectorAll(".btn-match").forEach(btn => {
+    btn.addEventListener("click", function () {
+        alert("¡Has hecho match!");
+    });
+});
+
+document.querySelectorAll(".btn-reportar").forEach(btn => {
+    btn.addEventListener("click", function () {
+        alert("Usuario reportado correctamente.");
+    });
+});
+</script>
+
+<script>
+// --- CONTACTO (MODAL) ---
+const modal = document.getElementById("modalContacto");
+const btnContacto = document.getElementById("btnContacto");
+const cerrarModal = document.getElementById("cerrarModal");
+const formContacto = document.getElementById("formContacto");
+const modalConfirm = document.getElementById("modalConfirmacion");
+const btnAceptar = document.getElementById("btnAceptar");
+
+// Abrir modal
+btnContacto.addEventListener("click", () => {
+    modal.style.display = "block";
+});
+
+// Cerrar modal con X
+cerrarModal.addEventListener("click", () => {
+    modal.style.display = "none";
+});
+
+// Enviar formulario contacto
+formContacto.addEventListener("submit", function(e){
+    e.preventDefault();
+    modal.style.display = "none";
+    modalConfirm.style.display = "block";
+});
+
+// Botón aceptar
+btnAceptar.addEventListener("click", function(){
+    modalConfirm.style.display = "none";
+});
+</script>
+
                                 
-                                <script> 
-                                document.getElementById("registroForm").addEventListener("submit", function(e){ 
-                                    e.preventDefault();
-                                    document.getElementById("registroSeccion").style.display = "none"; 
-                                    document.getElementById("perfilUsuario").style.display = "block";
-                                    document.getElementById("editNombre").value = document.getElementById("nombre").value; 
-                                    document.getElementById("editCorreo").value = document.getElementById("correo").value; 
-                                    document.getElementById("editInteres").value = document.getElementById("interes").value; 
-                                    }); 
-                                    </script>
-
-                                    <script> 
-                                    document.querySelector(".btn-match").addEventListener("click", function () { alert("¡Tú y María ahora son amigos!"); }); 
-                                    document.querySelector(".btn-reportar").addEventListener("click", function () { alert("Este usuario fue reportado exitosamente, ahora evaluaremos"); 
-
-                                    }); 
-                                    </script> 
-                                    </body> 
-                                    </html>
+ </body> 
+  </html>
