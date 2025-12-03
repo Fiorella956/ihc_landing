@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,27 +8,41 @@
     <link rel="stylesheet" href="style.css">
 
     <style>
-        body { margin:0; font-family: Arial, sans-serif; color:#333; }
-        header { display:flex; justify-content:space-between; align-items:center; padding:15px 40px; border-bottom:1px solid #ddd; }
-        header nav a { margin:0 10px; text-decoration:none; color:#333; }
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #333;
+        }
 
-        .hero { background:#ff6b35; color:white; padding:80px 40px; text-align:center; }
-        .btn { padding:12px 25px; border:none; cursor:pointer; border-radius:6px; font-size:15px; }
-        .btn-white { background:white; color:#ff6b35; margin-right:10px; }
-        .btn-blue { background:#4d6bff; color:white; }
+        header {
+            display: flex;
+            justify-content:space-between;
+            align-items:center;
+            padding:15px 40px;
+            border-bottom:1px solid #ddd;
+        }
 
-        .section { padding:60px 40px; max-width:1100px; margin:auto; }
-        .grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:20px; }
-        .card { padding:20px; border:1px solid #ddd; border-radius:10px; background:white; }
-        .title-center { text-align:center; margin-bottom:40px; }
+        header nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
 
-        .testimonios { display:flex; gap:20px; justify-content:center; flex-wrap:wrap; }
-        .testimonio { padding:20px; background:#f3f6ff; border-radius:10px; width:280px; }
+        header nav ul li {
+            display: inline-block;
+        }
 
-        footer { text-align:center; padding:30px; margin-top:50px; border-top:1px solid #ddd; }
+        header nav a {
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+        }
 
-        .input { width:100%; padding:12px; border:1px solid #ccc; border-radius:6px; margin-bottom:15px; }
-        .tags span { padding:8px 15px; background:#eee; border-radius:20px; margin-right:10px; cursor:pointer; display:inline-block; }
+        /* Intereses seleccionados */
+        .selected {
+            background:#4d6bff !important;
+            color:white !important;
+        }
     </style>
 </head>
 
@@ -40,7 +55,9 @@
     </h1>
 
     <nav>
-        <li><a href="#" id="btnContacto">Contacto</a></li>
+        <ul>
+            <li><a href="#" id="btnContacto">Contacto</a></li>
+        </ul>
     </nav>
 </header>
 
@@ -51,87 +68,6 @@
 
     <button class="btn btn-white">Ver demo AR</button>
     <a href="#registro" class="btn btn-blue">Regístrate gratis</a>
-</section>
-
-<!-- REVOLUCIÓN -->
-<section class="section">
-    <h2 class="title-center">Revolucionando las Conexiones Auténticas</h2>
-
-    <p style="text-align:center; max-width:800px; margin:auto;">
-        Finder es un sistema web y móvil innovador y competente que facilita el acceso a potenciales nuevas amistades...
-    </p>
-</section>
-
-<!-- VISIÓN / MISIÓN / VALORES -->
-<section class="section">
-    <div class="box-container">
-
-        <div class="info-box">
-            <img src="imagen_vision.png" alt="">
-            <div>
-                <h3>Nuestra Visión</h3>
-                <p>Ser la plataforma líder en gestión de amistades a nivel nacional.</p>
-            </div>
-        </div>
-
-        <div class="info-box">
-            <img src="imagen_mision.png" alt="">
-            <div>
-                <h3>Nuestra Misión</h3>
-                <p>Facilitar a jóvenes y profesionales encontrar amistades genuinas.</p>
-            </div>
-        </div>
-
-        <div class="info-box center-box">
-            <img src="imagen_valores.png" alt="">
-            <div>
-                <h3>Nuestros Valores</h3>
-                <p>Transparencia, Empatía, Seguridad, y Caridad.</p>
-            </div>
-        </div>
-
-        <div class="info-box">
-            <img src="imagen_problema.png" alt="">
-            <div>
-                <h3>El Problema</h3>
-                <p>Las redes sociales actuales fomentan conexiones superficiales.</p>
-            </div>
-        </div>
-
-        <div class="info-box">
-            <img src="imagen_solucion.jpg" alt="">
-            <div>
-                <h3>La Solución</h3>
-                <p>Matching inteligente por intereses reales, experiencias en realidad aumentada...</p>
-            </div>
-        </div>
-
-    </div>
-</section>
-
-<!-- COMO FUNCIONA -->
-<section class="section" style="text-align:center; padding:40px 20px; font-family:Arial, sans-serif;">
-    <h2>¿Cómo funciona?</h2>
-    <p style="font-size:18px; margin-top:10px;">Tres simples pasos para comenzar tu viaje hacia amistades auténticas</p>
-
-    <div style="display:flex; justify-content:center; gap:40px; margin-top:30px; flex-wrap:wrap;">
-
-        <div style="max-width:250px;">
-            <h3><strong>1. Crea tu perfil</strong></h3>
-            <p style="color:gray;">Completa tu perfil con tus intereses reales</p>
-        </div>
-
-        <div style="max-width:250px;">
-            <h3><strong>2. Encuentra matches</strong></h3>
-            <p style="color:gray;">Conecta con personas afines a ti</p>
-        </div>
-
-        <div style="max-width:250px;">
-            <h3><strong>3. Conecta y socializa</strong></h3>
-            <p style="color:gray;">Inicia conversaciones y construye amistades</p>
-        </div>
-
-    </div>
 </section>
 
 <!-- REGISTRO -->
@@ -154,118 +90,23 @@
             <span>Música</span>
         </div>
 
-        <button id="btnRegistrar" class="btn btn-blue" style="margin-top:20px; width:100%;">
-            Registrarse
-        </button>
+        <button id="btnRegistrar" class="btn btn-blue" style="margin-top:20px; width:100%;">Registrarse</button>
     </div>
 </section>
 
 <!-- PERFIL -->
 <section id="perfilUsuario" style="display:none; padding:60px 0;">
 
-    <div class="perfil-container">
+    <h2 style="text-align:center;">Tu perfil se registró correctamente</h2>
 
-        <div class="perfil-editar">
-            <h2>Editar tu perfil</h2>
-
-            <div class="foto-perfil">
-                <img src="imagen_sincara.png" alt="Foto de perfil">
-                <button class="btn-subir">Cambiar foto</button>
-            </div>
-
-            <label>Nombre:</label>
-            <input type="text" id="editNombre">
-
-            <label>Correo electrónico:</label>
-            <input type="email" id="editCorreo">
-
-            <label>Interés:</label>
-            <input type="text" id="editInteres">
-
-            <button class="btn-guardar">Guardar cambios</button>
-        </div>
-
-        <div class="sugerencias">
-            <h2>Personas sugeridas</h2>
-
-            <div class="card-user">
-                <h3>María López</h3>
-                <p>Edad: 22</p>
-                <p>Correo: maria123@gmail.com</p>
-                <p>Interés: Fútbol</p>
-            </div>
-
-            <button class="btn-match">Hacer Match</button>
-            <button class="btn-reportar">Reportar usuario</button>
-
-            <div class="card-user">
-                <h3>Carlos Ruiz</h3>
-                <p>Edad: 24</p>
-                <p>Correo: carlos456@gmail.com</p>
-                <p>Interés: Música</p>
-            </div>
-
-            <button class="btn-match">Hacer Match</button>
-            <button class="btn-reportar">Reportar usuario</button>
-        </div>
-
-    </div>
 </section>
-
-<!-- TESTIMONIOS -->
-<section class="section" style="background:#fafafa;">
-    <h2 class="title-center">Lo que dicen nuestros usuarios</h2>
-
-    <div class="testimonios">
-
-        <div class="testimonio">
-            <img src="imagen_lucas.jpg" alt="Lucas" class="foto-testimonio">
-            <strong>Lucas</strong>
-            <p>¡Increíbles experiencias y amistades!</p>
-        </div>
-
-        <div class="testimonio">
-            <img src="imagen_camila.jpg" alt="Camila" class="foto-testimonio">
-            <strong>Camila</strong>
-            <p>La realidad aumentada hace conocer personas como un juego.</p>
-        </div>
-
-        <div class="testimonio">
-            <img src="imagen_carlos.jpg" alt="Carlos" class="foto-testimonio">
-            <strong>Carlos</strong>
-            <p>He hecho amigos que comparten mis intereses.</p>
-        </div>
-
-    </div>
-</section>
-
-<!-- VIDEOS -->
-<section class="cards">
-    <div class="About-The-Product">
-        <h3>Video About-The-Product</h3>
-        <a href="https://youtu.be/I4QX-C00NaU" target="_blank">Descubre Finder</a>
-    </div>
-
-    <div class="About-The-Team">
-        <h3>Video About-The-Team</h3>
-        <a href="https://youtu.be/xr0yHJ67LmI" target="_blank">Descubre al Equipo detrás de Finder</a>
-    </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-    <p>Síguenos en redes • Políticas de privacidad • Términos de servicio • Contacto</p>
-</footer>
 
 <!-- MODAL CONTACTO -->
-<div id="modalContacto" class="modal">
+<div id="modalContacto" class="modal" style="display:none;">
     <div class="modal-content">
         <span id="cerrarModal" class="close">&times;</span>
 
         <h2>¿En qué te ayudo?</h2>
-        <p>Contacta conmigo a través de este formulario y te contestaré en un plazo de 24 horas.</p>
-
-        <div id="mensajeExito" class="mensaje-exito">¡Mensaje enviado con éxito!</div>
 
         <form id="formContacto">
             <label>Nombre</label>
@@ -277,9 +118,6 @@
             <label>Correo electrónico</label>
             <input type="email" required>
 
-            <label>Teléfono</label>
-            <input type="tel" required>
-
             <label>Mensaje</label>
             <textarea required></textarea>
 
@@ -289,37 +127,62 @@
 </div>
 
 <!-- MODAL CONFIRMACIÓN -->
-<div id="modalConfirmacion" class="modal-confirm">
+<div id="modalConfirmacion" class="modal-confirm" style="display:none;">
     <div class="modal-contenido">
         <h3>¡Gracias por contactarnos!</h3>
-        <p>Tu mensaje ha sido enviado correctamente.<br>Te responderemos pronto.</p>
         <button id="btnAceptar">Aceptar</button>
     </div>
 </div>
 
-<!-- SCRIPT -->
+<!-- SCRIPT FUNCIONAL -->
 <script>
+// --- ABRIR MODAL CONTACTO ---
+const btnContacto = document.getElementById("btnContacto");
+const modalContacto = document.getElementById("modalContacto");
+const cerrarModal = document.getElementById("cerrarModal");
+
+btnContacto.addEventListener("click", function(e){
+    e.preventDefault();
+    modalContacto.style.display = "block";
+});
+
+cerrarModal.addEventListener("click", function(){
+    modalContacto.style.display = "none";
+});
+
+// --- CERRAR MODAL AL HACER CLICK FUERA ---
+window.addEventListener("click", function(e){
+    if(e.target === modalContacto){
+        modalContacto.style.display = "none";
+    }
+});
+
+// --- FORMULARIO CONTACTO ---
+const formContacto = document.getElementById("formContacto");
+const modalConfirmacion = document.getElementById("modalConfirmacion");
+const btnAceptar = document.getElementById("btnAceptar");
+
+formContacto.addEventListener("submit", function(e){
+    e.preventDefault();
+    modalContacto.style.display = "none";
+    modalConfirmacion.style.display = "block";
+});
+
+btnAceptar.addEventListener("click", function(){
+    modalConfirmacion.style.display = "none";
+});
+
+// --- INTERESES (seleccionar) ---
+document.querySelectorAll("#intereses span").forEach(function(tag){
+    tag.addEventListener("click", function(){
+        this.classList.toggle("selected");
+    });
+});
+
 // --- REGISTRO ---
 document.getElementById("btnRegistrar").addEventListener("click", function () {
     document.getElementById("registro").style.display = "none";
     document.getElementById("perfilUsuario").style.display = "block";
-
-    document.getElementById("editNombre").value = document.getElementById("nombre").value;
-    document.getElementById("editCorreo").value = document.getElementById("correo").value;
-});
-
-// --- MATCH ---
-document.querySelectorAll(".btn-match").forEach(btn => {
-    btn.addEventListener("click", () => {
-        alert("¡Match realizado exitosamente!");
-    });
-});
-
-// --- REPORTAR ---
-document.querySelectorAll(".btn-reportar").forEach(btn => {
-    btn.addEventListener("click", () => {
-        alert("Usuario reportado correctamente.");
-    });
 });
 </script>
 
