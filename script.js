@@ -124,5 +124,15 @@ btnGuardar.addEventListener("click", function () {
 
 });
 
+// BOTÓN GUARDAR CAMBIOS
+const saveBtn = document.getElementById("saveChangesBtn");
+
+if (saveBtn) {
+    saveBtn.addEventListener("click", function (event) {
+        event.preventDefault(); // Evita recargar la página
+
+        alert("¡Cambios guardados correctamente! 😊");
+    });
+}
 
 
