@@ -184,21 +184,3 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
 });
-
-document.getElementById("registroForm").addEventListener("submit", function(e){
-    e.preventDefault();
-    document.getElementById("registroSeccion").style.display = "none";
-    document.getElementById("perfilUsuario").style.display = "block";
-
-    document.getElementById("editNombre").value = document.getElementById("nombre").value;
-    document.getElementById("editCorreo").value = document.getElementById("correo").value;
-    document.getElementById("editInteres").value = document.getElementById("interes").value;
-});
-
-document.querySelector(".btn-match").addEventListener("click", function () {
-    alert("¡Tú y María ahora son amigos!");
-});
-
-document.querySelector(".btn-reportar").addEventListener("click", function () {
-    alert("Este usuario fue reportado exitosamente, ahora evaluaremos");
-});
