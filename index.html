@@ -1,183 +1,167 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="es">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Finder - Prueba Registro</title>
-  <style>
-    body{font-family:Arial,Helvetica,sans-serif;margin:0;color:#333}
-    header{display:flex;justify-content:space-between;align-items:center;padding:15px 24px;border-bottom:1px solid #ddd}
-    .hero{background:#ff6b35;color:#fff;padding:40px 24px;text-align:center}
-    .section{padding:36px 24px;max-width:1100px;margin:0 auto}
-    .input{width:100%;padding:10px;border:1px solid #ccc;border-radius:6px;margin-bottom:12px}
-    .btn{padding:10px 14px;border:none;border-radius:8px;cursor:pointer}
-    .btn-blue{background:#4d6bff;color:#fff}
-    .tags span{display:inline-block;padding:8px 12px;background:#eee;border-radius:20px;margin:6px 6px 0 0;cursor:pointer}
-    .tags span.selected{background:#4d6bff;color:#fff}
-    /* modal simple */
-    .modal{display:none;position:fixed;left:0;top:0;width:100%;height:100%;background:rgba(0,0,0,0.5);z-index:2000}
-    .modal .content{background:#fff;width:360px;margin:80px auto;padding:18px;border-radius:10px;position:relative}
-    .close{position:absolute;right:10px;top:6px;cursor:pointer;font-size:20px}
-    /* perfil */
-    #perfilUsuario{display:none;padding:30px;background:#fafafa}
-    .profile-row{display:flex;gap:20px;align-items:center}
-  </style>
-</head>
-<body>
+<head> 
+    <link rel="stylesheet" href="style.css"> 
+    <meta charset="UTF-8" /> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+    <title>Finder - Amistades auténticas</title> 
 
-<header>
-  <h1 style="display:flex;align-items:center;gap:10px"><img src="" alt="" style="width:36px;height:36px;background:#ccc;border-radius:6px"> Finder</h1>
-  <nav><a href="#" id="btnContacto">Contacto</a></nav>
+    <style>
+        body { margin:0; font-family: Arial, sans-serif; color:#333; } 
+        header { display:flex; justify-content:space-between; align-items:center; padding:15px 40px; border-bottom:1px solid #ddd; } 
+        header nav a { margin:0 10px; text-decoration:none; color:#333; } 
+        .hero { background:#ff6b35; color:white; padding:80px 40px; text-align:center; } 
+        .btn { padding:12px 25px; border:none; cursor:pointer; border-radius:6px; font-size:15px; } 
+        .btn-white { background:white; color:#ff6b35; margin-right:10px; } 
+        .btn-blue { background:#4d6bff; color:white; } 
+        .section { padding:60px 40px; max-width:1100px; margin:auto; } 
+        .grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:20px; } 
+        .card { padding:20px; border:1px solid #ddd; border-radius:10px; background:white; } 
+        .title-center { text-align:center; margin-bottom:40px; } 
+        .testimonios { display:flex; gap:20px; justify-content:center; flex-wrap:wrap; } 
+        .testimonio { padding:20px; background:#f3f6ff; border-radius:10px; width:280px; } 
+        .input { width:100%; padding:12px; border:1px solid #ccc; border-radius:6px; margin-bottom:15px; } 
+        .tags span { padding:8px 15px; background:#eee; border-radius:20px; margin-right:10px; cursor:pointer; display:inline-block; }
+        .tags .active { background:#4d6bff; color:white; }
+    </style>
+</head> 
+
+<body> 
+
+<header> 
+    <div style="display:flex; align-items:center; gap:10px;">
+        <img src="imagen_logo.jpg" alt="Logo Finder" style="width:50px; height:50px;">
+        <h1 style="margin:0;">Finder</h1>
+    </div>
+
+    <nav> 
+        <a href="#" id="btnContacto">Contacto</a>
+    </nav> 
 </header>
 
-<section class="hero">
-  <h1>Encuentra amistades auténticas</h1>
-  <p>Conéctate en un espacio seguro, inmersivo y lleno de oportunidades</p>
+<section class="hero"> 
+    <h1>Encuentra amistades auténticas</h1> 
+    <p>Conéctate en un espacio seguro, inmersivo y lleno de oportunidades</p>
+
+    <a href="#registro" class="btn btn-blue">Regístrate gratis</a> 
 </section>
 
-<!-- Registro -->
-<section id="registro" class="section">
-  <div style="max-width:720px;margin:auto">
-    <h2>¡Únete a nosotros!</h2>
-
-    <input id="nombre" class="input" type="text" placeholder="Ingresa tu nombre">
-    <input id="correo" class="input" type="email" placeholder="Correo electrónico">
-
-    <p>Intereses (clic para seleccionar):</p>
-    <div id="intereses" class="tags">
-      <span data-value="Deportes">Deportes</span>
-      <span data-value="Arte">Arte</span>
-      <span data-value="Tecnología">Tecnología</span>
-      <span data-value="Música">Música</span>
+<section id="registro" class="section" style="display:flex; align-items:center; justify-content:space-between; gap:40px;"> 
+    <div style="flex:1;"> 
+        <h2 style="font-size:32px; margin-bottom:10px;">¡Únete a nosotros!</h2> 
+        <p style="font-size:18px; color:#555;"> Regístrate y comienza tu viaje hacia nuevas amistades </p> 
     </div>
 
-    <button id="btnRegistrar" class="btn btn-blue" style="margin-top:16px;width:100%">Registrarse</button>
-  </div>
-</section>
+    <div style="flex:1; background:#fff; padding:30px; border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,0.1);">
 
-<!-- Perfil que mostrará datos -->
-<section id="perfilUsuario" class="section">
-  <div style="max-width:720px;margin:auto">
-    <h2>Perfil registrado</h2>
-    <div class="profile-row">
-      <div>
-        <p><strong>Nombre:</strong> <span id="perfilNombre"></span></p>
-        <p><strong>Correo:</strong> <span id="perfilCorreo"></span></p>
-        <p><strong>Intereses:</strong> <span id="perfilIntereses"></span></p>
-      </div>
+        <input class="input" type="text" id="nombre" placeholder="Ingresa tu nombre" /> 
+        <input class="input" type="email" id="correo" placeholder="Correo electrónico" /> 
+        
+        <p style="margin:10px 0;">Intereses:</p> 
+
+        <div id="intereses" class="tags"> 
+            <span>Deportes</span> 
+            <span>Arte</span> 
+            <span>Tecnología</span> 
+            <span>Música</span> 
+        </div>
+
+        <button id="btnRegistrar" class="btn btn-blue" style="margin-top:20px; width:100%;"> Registrarse </button>
+
     </div>
-    <button id="volverRegistro" class="btn" style="margin-top:12px">Editar / Volver al registro</button>
-  </div>
 </section>
 
-<!-- Modal contacto -->
-<div id="modalContacto" class="modal" aria-hidden="true">
-  <div class="content">
-    <span id="cerrarModal" class="close">×</span>
-    <h3>Contáctanos</h3>
-    <form id="formContacto">
-      <input class="input" type="text" placeholder="Nombre" required>
-      <input class="input" type="email" placeholder="Correo" required>
-      <textarea class="input" placeholder="Mensaje" required style="min-height:90px"></textarea>
-      <button type="submit" class="btn btn-blue">Enviar</button>
-    </form>
-  </div>
+<!-- PERFIL -->
+<section id="perfilUsuario" style="display:none; padding:60px 0;"> 
+    <div class="perfil-container" style="max-width:600px; margin:auto;"> 
+
+        <h2>Editar tu perfil</h2>
+
+        <label>Nombre:</label> 
+        <input type="text" id="editNombre" class="input"> 
+
+        <label>Correo electrónico:</label> 
+        <input type="email" id="editCorreo" class="input"> 
+
+        <label>Interés seleccionado:</label> 
+        <input type="text" id="editInteres" class="input"> 
+
+        <button id="btnGuardar" class="btn btn-blue" style="width:100%;">Guardar cambios</button>
+
+    </div>
+</section>
+
+<!-- MODAL CONTACTO -->
+<div id="modalContacto" class="modal" style="display:none;">
+    <div class="modal-content" style="background:white; padding:20px; width:400px; margin:auto; margin-top:120px;">
+        <span id="cerrarModal" style="float:right; cursor:pointer;">&times;</span>
+        <h2>¿En qué te ayudo?</h2> 
+        <form id="formContacto">
+            <label>Nombre</label>
+            <input type="text" required class="input">
+
+            <label>Correo</label>
+            <input type="email" required class="input">
+
+            <label>Mensaje</label>
+            <textarea required class="input"></textarea>
+
+            <button class="btn btn-blue" style="width:100%;">Enviar</button>
+        </form>
+    </div>
 </div>
 
 <script>
-/*
-  Este script espera que el DOM esté listo porque se ejecuta al final del body.
-  Funcionalidad:
-  - seleccionar intereses
-  - registrar: valida, muestra perfil con intereses seleccionados
-  - botón volver (editar)
-  - modal contacto
-*/
+// --- SELECCIÓN DE INTERESES ---
+let interesSeleccionado = "";
 
-// Intereses toggle
-const interesesContainer = document.getElementById('intereses');
-let interesesSeleccionados = [];
+document.querySelectorAll("#intereses span").forEach(tag => {
+    tag.addEventListener("click", function() {
 
-interesesContainer.querySelectorAll('span').forEach(span => {
-  span.addEventListener('click', () => {
-    span.classList.toggle('selected');
-    const val = span.getAttribute('data-value') || span.innerText.trim();
-    if (span.classList.contains('selected')) {
-      if (!interesesSeleccionados.includes(val)) interesesSeleccionados.push(val);
-    } else {
-      interesesSeleccionados = interesesSeleccionados.filter(i => i !== val);
+        document.querySelectorAll("#intereses span").forEach(t => t.classList.remove("active"));
+        this.classList.add("active");
+
+        interesSeleccionado = this.textContent;
+    });
+});
+
+// --- REGISTRO ---
+document.getElementById("btnRegistrar").addEventListener("click", function () {
+
+    const nombre = document.getElementById("nombre").value.trim();
+    const correo = document.getElementById("correo").value.trim();
+
+    if (nombre === "" || correo === "") {
+        alert("Por favor completa tu nombre y correo.");
+        return;
     }
-    // (opcional) console.log(interesesSeleccionados)
-  });
+
+    if (interesSeleccionado === "") {
+        alert("Selecciona al menos un interés.");
+        return;
+    }
+
+    document.getElementById("editNombre").value = nombre;
+    document.getElementById("editCorreo").value = correo;
+    document.getElementById("editInteres").value = interesSeleccionado;
+
+    document.getElementById("registro").style.display = "none";
+    document.getElementById("perfilUsuario").style.display = "block";
 });
 
-// Registrar
-const btnRegistrar = document.getElementById('btnRegistrar');
-btnRegistrar.addEventListener('click', () => {
-  const nombre = document.getElementById('nombre').value.trim();
-  const correo = document.getElementById('correo').value.trim();
-
-  if (!nombre || !correo) {
-    alert('Por favor completa nombre y correo.');
-    return;
-  }
-
-  // pasar datos al perfil
-  document.getElementById('perfilNombre').innerText = nombre;
-  document.getElementById('perfilCorreo').innerText = correo;
-  document.getElementById('perfilIntereses').innerText = interesesSeleccionados.length ? interesesSeleccionados.join(', ') : '—';
-
-  // ocultar registro y mostrar perfil
-  document.getElementById('registro').style.display = 'none';
-  document.getElementById('perfilUsuario').style.display = 'block';
+// --- GUARDAR CAMBIOS ---
+document.getElementById("btnGuardar").addEventListener("click", function () {
+    alert("¡Cambios guardados correctamente!");
 });
 
-// Volver a registro (editar)
-document.getElementById('volverRegistro').addEventListener('click', () => {
-  document.getElementById('perfilUsuario').style.display = 'none';
-  document.getElementById('registro').style.display = 'block';
-  // rellenar inputs con lo guardado (si quieres)
-  document.getElementById('nombre').value = document.getElementById('perfilNombre').innerText;
-  document.getElementById('correo').value = document.getElementById('perfilCorreo').innerText;
-  // restaurar selección de intereses visualmente
-  document.querySelectorAll('#intereses span').forEach(span => {
-    const val = span.getAttribute('data-value') || span.innerText.trim();
-    if (interesesSeleccionados.includes(val)) span.classList.add('selected'); else span.classList.remove('selected');
-  });
+// --- CONTACTO ---
+const modal = document.getElementById("modalContacto");
+document.getElementById("btnContacto").addEventListener("click", () => {
+    modal.style.display = "block";
 });
-
-// Modal contacto
-const btnContacto = document.getElementById('btnContacto');
-const modalContacto = document.getElementById('modalContacto');
-const cerrarModal = document.getElementById('cerrarModal');
-const formContacto = document.getElementById('formContacto');
-
-btnContacto.addEventListener('click', (e) => {
-  e.preventDefault();
-  modalContacto.style.display = 'block';
-  modalContacto.setAttribute('aria-hidden','false');
+document.getElementById("cerrarModal").addEventListener("click", () => {
+    modal.style.display = "none";
 });
-
-cerrarModal.addEventListener('click', () => {
-  modalContacto.style.display = 'none';
-  modalContacto.setAttribute('aria-hidden','true');
-});
-
-window.addEventListener('click', (e) => {
-  if (e.target === modalContacto) {
-    modalContacto.style.display = 'none';
-    modalContacto.setAttribute('aria-hidden','true');
-  }
-});
-
-if (formContacto) {
-  formContacto.addEventListener('submit', (e) => {
-    e.preventDefault();
-    alert('Mensaje enviado. Gracias 😊');
-    formContacto.reset();
-    modalContacto.style.display = 'none';
-  });
-}
 </script>
 
 </body>
