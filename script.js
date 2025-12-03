@@ -101,27 +101,4 @@ document.querySelectorAll(".interes-tag").forEach(tag => {
 
                     const btnGuardar = document.querySelector('.btn-guardar'); if (btnGuardar) { btnGuardar.addEventListener('click', () => { alert('Cambios guardados (simulado).'); }); } });
 
-// --- GUARDAR CAMBIOS DEL PERFIL ---
-const btnGuardar = document.getElementById("btnGuardar");
-
-btnGuardar.addEventListener("click", function () {
-
-    const nuevoNombre = document.getElementById("editNombre").value.trim();
-    const nuevoCorreo = document.getElementById("editCorreo").value.trim();
-
-    if (nuevoNombre === "" || nuevoCorreo === "") {
-        alert("Por favor completa ambos campos.");
-        return;
-    }
-
-    // Mostrar confirmación
-    alert("¡Cambios guardados correctamente!");
-
-    // Aquí puedes hacer más cosas si quieres:
-    // - Guardar en localStorage
-    // - Enviar a un backend
-    // - Actualizar visualmente otros elementos
-
-});
-
 
